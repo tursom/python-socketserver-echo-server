@@ -13,7 +13,7 @@ class EchoHandler(BaseRequestHandler):
 		self.request.send(msg.encode())
 
 
-def getServer(addr, handler, DEBUG):
+def getServer(addr, handler, DEBUG=False):
 	if DEBUG:
 		serv = ThreadingTCPServer(addr, handler, bind_and_activate=False)
 		serv.allow_reuse_address = True
